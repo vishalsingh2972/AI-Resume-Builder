@@ -6,6 +6,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignInPage from './components/auth/sign-in/SignInPage.jsx'
 import Home from './components/home/Home.jsx'
 import Dashboard from './components/dashboard/Dashboard.jsx'
+import { ClerkProvider } from '@clerk/clerk-react'
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 const Router = createBrowserRouter([
   {
@@ -30,6 +33,8 @@ const Router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={Router}/>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <RouterProvider router={Router}/>
+    </ClerkProvider>
   </React.StrictMode>,
 )
