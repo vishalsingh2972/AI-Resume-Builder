@@ -1,1 +1,1 @@
-![RiUh_8VTGYM-HD (1)](https://github.com/vishalsingh2972/AI-Resume-Builder/assets/106817047/f89a1065-508d-48ee-b8e1-35d3937f4206)
+![ai_resume_showcase ae0bb09a7667](https://github.com/vishalsingh2972/AI-Resume-Builder/assets/106817047/2ca76f05-d59c-4829-a357-b39c6a469170)
