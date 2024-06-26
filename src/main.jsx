@@ -22,12 +22,12 @@ const Router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard/>
-      },
-      {
-        path: "/auth/sign-in",
-        element: <SignInPage/>
       }
     ]
+  },
+  {
+    path: "/auth/sign-in",
+    element: <SignInPage/>
   }
 ])
 
