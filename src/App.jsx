@@ -9,7 +9,7 @@ function App() {
 
   const {user, isLoaded, isSignedIn} = useUser()
 
-  if(!isSignedIn) //if user not signed in and goes to "http://localhost:5173/dashboard" redirect him to "http://localhost:5173/auth/sign-in"
+  if(!isSignedIn && isLoaded) //if user not signed in and goes to "http://localhost:5173/dashboard" redirect him to "http://localhost:5173/auth/sign-in", if user is signed in and goes to "http://localhost:5173/dashboard" he will be able to access it
   {
     return <Navigate to={'/auth/sign-in'}/>
   }
