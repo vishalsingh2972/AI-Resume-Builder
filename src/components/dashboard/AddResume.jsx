@@ -10,11 +10,19 @@ import {
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
+import { v4 as uuidv4 } from 'uuid';
 
 const AddResume = () => {
 
   const [openDialogue, setOpenDialogue] = useState(false)
+  const [resumeTitle, setResumeTitle] = useState()
 
+  const onCreate = () => {
+    const uuid = uuidv4();
+
+    console.log(resumeTitle);
+    console.log(uuid);
+  }
 
   return (
     <div>
@@ -30,10 +38,19 @@ const AddResume = () => {
             <DialogTitle>Create New Resume</DialogTitle>
             <DialogDescription>
               <p>Add title for your new Resume</p>
-              <Input className="mt-2 mb-1" placeholder="Eg. Software Developer"/>
+              <Input className="mt-2 mb-1" placeholder="Eg. Software Developer"
+              onChange={(e) => 
+                // console.log(e.target.value)
+                setResumeTitle(e.target.value)
+              }
+              />
             </DialogDescription>
             <div className="flex justify-end gap-5">
-              <Button>Create</Button>
+              <Button
+                disabled={!resumeTitle}
+                onClick={() => onCreate()}>
+                Create
+              </Button>
               <Button onClick={() => setOpenDialogue(false)} variant="destructive">Cancel</Button>
             </div>
           </DialogHeader>
